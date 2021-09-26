@@ -1,0 +1,130 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="/static/styles.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous">
+    </script>
+
+    <script src="../static/index.js"></script>
+</head>
+
+
+<body>
+<div id="header" class="page-header sticky-top pb-2 border-bottom">
+
+    <div class="pt-3">
+        <h2 class="titleHeader text-center"> PROFILE</h2>
+        <h5 class="titleHeader text-center"><%= username %>'s Photo Album</h5>
+    </div>
+
+
+    <div class="d-flex justify-content-around px-5 mx-5">
+        <div class="mx-5 px-5 py-2">
+            <a href="/">
+                <button class="btn"><i class="fa fa-home"></i> Home</button>
+            </a>
+        </div>
+
+        <div class="mx-5 px-5 py-2">
+
+            <a href="/upload">
+                <button type="button" class="btn px-5"><i class="fa fa-bars"></i>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    Upload
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </button>
+            </a>
+
+        </div>
+
+
+
+
+        <div class="mx-5 px-5 py-2">
+            <a href=" /delete">
+                <button class="btn"><i class="fa fa-close"></i> Log Out</button>
+            </a>
+        </div>
+    </div>
+    <h6 class="px-5 text-center text-muted">
+            (You can upload a photo into your album by clicking the button above)</h6>
+
+
+</div>
+
+
+<div class="clearfix mx-5 px-5 my-4">
+    <div class="mb-3">
+        <p class="px-5 pt-2 pb-2  text-center">Hi <%= username %>. </p>
+        <% if (hasPhotos == "true") {%>
+        <p class="px-5 pb-2 text-center"> Here are all the photos uploaded by you.</p>
+        <p class="px-5 pb-2 text-center"> Click on a photo to view how many comments you have received.</p>
+        <% }  else if (hasPhotos == "false") {%>
+            <p class="px-5 pb-2 text-center" >Photos uploaded by you will appear here.</p>
+        <% } %>
+
+    </div>
+
+    <% if (hasPhotos == "true") {%>
+
+    <% for (let i = 0; i < imgPath.length; i++){ %>
+        <div class="card homeImage">
+            <div class="row">
+                <div class="col-md-7 text-center px-3 py-2">
+                    <a href="/images/<%= imgName[i] %>" class="stretched-link">
+                        <img class="py-3" width="100%" height="auto" src="<%= imgPath[i] %>">
+                    </a>
+
+
+                    <span><%= likes[i] %> users liked this post</span>
+                    <br><br>
+                </div>
+                <div class="col-md-5">
+                    <div class="card-body text-center">
+                        <p class="card-title text-center"><%= imgName[i] %> by <%= imgUploader[i] %></p>
+                        <p class="card-text text-center pb-2"><small class="text-muted"><%= imgDate[i] %></small></p>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    <% } %>
+
+    <% }  else if (hasPhotos == "false") {%>
+    <h4 class="my-5 px-5 py-5 text-center border-bottom border-top" > You haven't uploaded any photo. </h4>
+
+    <% } %>
+
+</div>
+
+
+<div class="page-footer">
+
+    <div class="text-center py-3">
+        <p> ©2021:xzhang@tcd.ie </p>
+    </div>
+
+</div>
+
+
+</body>
+</html>

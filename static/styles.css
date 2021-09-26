@@ -1,0 +1,204 @@
+html, body {
+    width: 100%;
+}
+
+p {
+    margin: 0;
+    padding: 0
+}
+
+h1, h2, h3, h4, h5 {
+    color:#515151;
+}
+
+
+body{background: ivory;
+    font-size: 1.1em;
+    font-family: "Avenir Next";
+}
+
+.homeImage {
+    background: ivory;
+}
+
+.page-footer {
+    font-size: 0.8em;
+}
+#header, .page-footer  {
+    font-family: "Avenir Next", sans-serif;
+    background-color: ivory;
+}
+
+
+#wrong_msg {
+    color: red;
+}
+input {
+    width: 100%;
+    padding: 0.2em;
+    margin: 0.4em;
+    border: none;
+    background-color: blanchedalmond;
+}
+input[type=button], input[type=submit], input[type=reset], input[type=file] {
+    background-color:#73AD21;
+
+}
+.click {
+    font-family: Chalkboard, sans-serif;
+    position: relative;
+    left: 16em;
+}
+
+.login {
+    position: relative;
+    left: 35em;
+    max-width: 50%;
+    height: auto;
+}
+
+.signup {
+    position: relative;
+    left: 20em;
+    max-width: 50%;
+    height: auto;
+}
+.login_main {
+    position: relative;
+    left: 35em;
+    max-width: 50%;
+    height: auto;
+}
+.content {
+    position: relative;
+    top: -9em;
+    max-width: 50%;
+    height: auto;
+    font-size: 1.1em;
+}
+.content_main {
+    max-width: 50%;
+    height: auto;
+    position: relative;
+    top: -5em;
+    font-size: 1.1em;
+}
+.content_profile {
+    max-width: 50%;
+    height: auto;
+    position: relative;
+    top: -8em;
+    left: 26em;
+    font-size: 1.1em;
+}
+.content_upload {
+    max-width: 60%;
+    height: auto;
+    position: relative;
+    top: -10em;
+    left: 26em;
+    font-size: 1em;
+}
+.content_error{
+    max-width: 50%;
+    height: auto;
+    position: relative;
+    top: -11em;
+    font-size: 1.1em;
+}
+.login_profile{
+    position: relative;
+    max-width: 50%;
+    height: auto;
+    font-size: 1.2em;
+    left:3em;
+}
+.login_upload {
+    position: relative;
+    max-width: 50%;
+    height: auto;
+    font-size: 1.3em;
+    left:2em;
+}
+.intro {
+    background-color:#ffcd00;
+
+}
+.sec_intro {
+    background-color:#feb7ad;
+
+}
+.third_intro {
+    background-color:#00b140;
+
+}
+.fourth_intro {
+    background-color:#91d3ca;
+
+}
+.upload_similar_to_intro {
+    background-color:blanchedalmond;
+    padding: 1em 2em 1em 2em;
+    margin: 1em 2em 1em 2em;
+}
+.logout {
+    position: relative;
+    left: 43em;
+    top:-4.5em;
+    font-size: 1.8em;
+    font-family: "Avenir Next", sans-serif;
+}
+.home_link {
+    position: relative;
+    left: 7em;
+    top:-2.7em;
+    font-size: 1.8em;
+    font-family: "Avenir Next", sans-serif;
+}
+.image {
+    position: relative;
+    left: 30em;
+    top: -17em;
+    border: 10px solid #73AD21;
+    width:26%;
+    height:auto;
+}
+#footer {
+    font-family: Avenir, Helvetica, sans-serif;
+    text-align: center;
+}
+
+.list {
+    padding: 2em;
+    margin: 1em 2em 1em 2em;
+}
+.table {
+    width: 100%;
+    font-family: Avenir, Helvetica, sans-serif;
+    font-size: 1.3em;
+    background-color:blanchedalmond;
+    text-align: center;
+}
+th, td {
+    padding: 1em;
+}
+tr:hover {background-color: ivory;}
+
+.btn {
+    background-color:#73AD21;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+.btn:hover {
+    background-color:#00b140;
+}
+
+/*// Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+    .form {
+      position: relative; left: -180px;
+    }
+
+
+}

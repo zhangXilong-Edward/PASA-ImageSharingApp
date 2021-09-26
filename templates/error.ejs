@@ -1,0 +1,68 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href= "/static/styles.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+<div id="header" class="page-header my-2 mx-5 px-5 py-2">
+    <h1 class="my-2 mx-5 px-5 py-2 text-center">LOG IN PAGE</h1>
+    <p class="text-center py-2">Please log in with your username and Network Login Password <br>The provider of your service is requesting that you authenticate with your credentials.
+    </p>
+</div>
+
+<div id="container" class="mx-5 px-5 my-5">
+
+
+    <div class="float-right form">
+        <form action="/profile" method="post">
+            <div>&nbsp;&nbsp;&nbsp;USERNAME: <input type="text" name="username"></div>
+            <div>&nbsp;&nbsp;&nbsp;PASSWORD: <input type="password" name="password"></div>
+            <br>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label class="form-check-label" for="exampleCheck1">Remember me</label>
+            </div>
+            <div><input class="btn" type="submit" value="LOG IN"></div>
+        </form>
+        <p id="wrong_msg">Invalid Credentials!</p>
+        <p id="hint">Hint: <%=hint%></p>
+    </div>
+
+    <div class="float-left">
+        <div class="intro px-5 py-5">
+            <p>Log in to upload photos and leave comments</p>
+        </div>
+        <div class="sec_intro px-5 py-5">
+            <p>Connect with people from all across the world.</p>
+        </div>
+        <div class="third_intro px-5 py-5">
+            <p>Connect with people from all across the world.</p>
+        </div>
+        <div class="fourth_intro px-5 py-5">
+            <p>¡Bienvenido! Cada día estoy mejor aquí.</p>
+        </div>
+    </div>
+
+</div>
+
+<!--<div class="page-footer font-small border-top border-success">-->
+
+<!--    <div class="footer-copyright text-center py-3">© 2021 Copyright:-->
+<!--        <a href="#"> xzhang@tcd.ie </a>-->
+<!--    </div>-->
+
+<!--</div>-->
+
+
+
+</body>
+</html>

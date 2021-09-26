@@ -1,0 +1,106 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="/static/styles.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous">
+    </script>
+
+    <script src="../static/index.js"></script>
+</head>
+
+<body>
+
+<div id="header" class="page-header sticky-top px-2 ">
+    <div class="clearfix my-2 mx-5 px-5 py-2">
+        <h2 class="titleHeader text-center ml-4 mr-4 mt-2">UPLOAD PAGE</h2>
+    </div>
+
+
+    <div class="d-flex justify-content-around mx-5 px-5">
+        <div class="mx-5 px-5 py-2">
+            <a href="/">
+                <button class="btn"><i class="fa fa-home"></i> Home</button>
+            </a>
+        </div>
+
+        <div class="mx-5 px-5 py-2">
+            <a href="/profile">
+                <button class="btn px-5"><i class="fa fa-bars"></i>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Profile
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </button>
+            </a>
+        </div>
+
+
+        <div class="mx-5 px-5 py-2">
+            <a href=" /delete">
+                <button class="btn"><i class="fa fa-close"></i> Log Out</button>
+            </a>
+        </div>
+    </div>
+
+</div>
+
+
+<div class="d-flex justify-content-around my-5 py-5">
+
+
+
+        <div class="mx-5 py-2">
+            <p>Hi, <%= username %></p>
+            <p>Select an image in your machine and click submit</p>
+        </div>
+
+        <div class="w-25 mx-5 py-2">
+            <form action="/uploaded" method="post" enctype="multipart/form-data">
+                <input type="file" name="userImg">
+                <input type="submit" value="UPLOAD">
+            </form>
+        </div>
+
+        <!--            <form class="form-inline" action="/uploaded" method="post" enctype="multipart/form-data">-->
+        <!--                <div class="form-group mb-2">-->
+        <!--                    <p>Write a caption... </p>-->
+        <!--                </div>-->
+        <!--                <div class="form-group mx-sm-3 mb-2" >-->
+        <!--                    <input type="password" class="form-control" id="inputPassword2" name="caption"-->
+        <!--                           placeholder="What's on your mind...">-->
+        <!--                </div>-->
+        <!--                <button type="submit" class="btn btn-success mb-2">OK</button>-->
+        <!--            </form>-->
+
+
+
+
+    <!--<div class="page-footer">-->
+
+    <!--    <div class="text-center py-3">-->
+
+    <!--        <p> ©2021:xzhang@tcd.ie </p>-->
+    <!--    </div>-->
+
+    <!--</div>-->
+</div>
+</body>
+
+
+</html>

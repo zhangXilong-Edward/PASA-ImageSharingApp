@@ -1,0 +1,92 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="/static/styles.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous">
+    </script>
+
+    <script src="../static/index.js"></script>
+</head>
+
+<body>
+
+<div id="header" class="page-header sticky-top px-2 ">
+    <div class="clearfix my-2 mx-5 px-5 py-2">
+        <h2 class="titleHeader text-center ml-4 mr-4 mt-2">Photo Uploaded</h2>
+    </div>
+
+
+    <div class="d-flex justify-content-around mx-5 px-5">
+        <div class="mx-5 px-5 py-2">
+            <a href="/">
+                <button class="btn"><i class="fa fa-home"></i> Home</button>
+            </a>
+        </div>
+
+        <div class="mx-5 px-5 py-2">
+            <a href="/profile">
+                <button class="btn"><i class="fa fa-bars"></i>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Profile
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </button>
+            </a>
+        </div>
+
+
+        <div class="mx-5 px-5 py-2">
+            <a href=" /delete">
+                <button class="btn"><i class="fa fa-close"></i> Log Out</button>
+            </a>
+        </div>
+    </div>
+
+</div>
+
+
+
+<div class="d-flex justify-content-around my-5 py-5">
+
+    <div class="mx-5 pl-5 py-2">
+        <p>Hi, <%= username %></p>
+        <p class="pb-3">Here is your uploaded photo</p>
+        <% if(uploaded == "true"){ %>
+            <span class="pt-1"> Click here to upload another one</span> <br>
+            <a href="/upload">
+                <button class="btn px-5"><i class="fa fa-bars"></i>UPLOAD</button>
+            </a>
+        <% } %>
+    </div>
+
+    <div class="w-25 mx-5 py-2">
+        <img width="100%" height="auto" src="/uploads/<%= filename %>">
+    </div>
+
+
+
+
+</div>
+
+
+
+</body>
+
+
+</html>

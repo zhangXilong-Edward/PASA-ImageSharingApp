@@ -1,0 +1,176 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="/static/styles.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous">
+    </script>
+
+    <script src="../static/index.js"></script>
+</head>
+
+<body>
+<div id="header" class="page-header px-2 sticky-top border-bottom">
+
+    <div class="pt-3">
+        <h2 class="titleHeader text-center"> &nbsp; &nbsp;PASA</h2>
+        <h5 class="titleHeader text-center"> &nbsp; &nbsp;Photo Album Sharing App</h5>
+
+
+    </div>
+
+
+    <div class="d-flex justify-content-around ">
+        <div class="mx-5 px-5 py-2">
+            <a href= <%= link %>>
+                <button class="btn"><i class="fa fa-bars"></i> <%= button %> &nbsp</button>
+            </a>
+        </div>
+
+        <div class="mx-5 px-5 py-2">
+            <a href="/">
+                <button class="btn px-5"><i class="fa fa-home"></i>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    Home
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </button>
+            </a>
+        </div>
+
+
+        <div class="mx-5 px-5 py-2">
+            <% if(isLoggedIn == "false"){ %>
+                <a href="/signup">
+                    <button class="btn"><i class="fa fa-bars"></i> Sign up</button>
+                </a>
+            <% } else { %>
+                <a href="/delete">
+                    <button class="btn"><i class="fa fa-close"></i> Log out</button>
+                </a>
+            <% } %>
+        </div>
+    </div>
+
+
+</div>
+
+<div class="clearfix  mx-5 px-5 my-4 ">
+
+    <div id="main-content">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+
+
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img id="myImg" name="<%= detailImgName %>" class="d-block w-100 fit-image img-fluid filter"
+                         src="/static/uploads/<%= detailImgName %>">
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="card homeImage">
+        <div class="row ">
+            <div class="col-md-6 text-center px-3 py-5">
+
+                <% if(isLoggedIn == "true"){ %>
+
+                    <div class="pt-4 mt-3">
+                        <textarea class="form-control" rows="3" id="com" name="comments"></textarea><br/>
+
+                        <div class="px-5 d-flex justify-content-center">
+                            <div>
+                                <button class="btn " id="likes" onclick="likesUpdate()">
+                                    <i class="fa fa-heart"> </i>
+                                </button>
+                            </div>
+                            <div>
+                                <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                            </div>
+                            <div>
+                                <button id="commentBtn" class="btn" type="button" onclick="commentsUpdate()">
+                                    <i class="fa fa-paper-plane fa-lg replace"></i>
+                                </button>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                <% } else { %>
+                    <p class="card-title text-center font-weight-bold text-warning pt-2">Log in to post comments and
+                        give
+                        likes</p>
+
+                <% } %>
+
+                <div class=" my-5 py-5 px-2">
+
+                    <p class="card-title text-center">Photo name: <%= detailImgName %></p>
+                    <p class="card-title text-center">Uploader: <%= detailUploader %></p>
+                    <p class="card-text text-center">Date of uploading: <%= detailDate %></p> <br><br>
+                    <p id="likesSection" class="card-title text-center"><%= detailLikes %> users liked this photo</p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6">
+                <div class="card-body">
+                    <p class="card-title text-center font-weight-bold pt-5">Comments:</p>
+
+                    <p id="comments" class="card-text px-3 py-2 border-bottom border-top">
+
+                        <% if ( content !== "No comments yet for this photo") { %>
+                            <% for (let i = 0; i < user.length; i++){ %>
+                                @<%= user[i] %>:&nbsp;<%= content[i] %>
+                                <br>
+                            <% } %>
+                        <% } else{ %>
+                            <%= content %>
+                        <% } %>
+
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="page-footer">
+
+    <div class="text-center py-3">
+
+        <p> ©2021:xzhang@tcd.ie </p>
+    </div>
+
+</div>
+
+
+</body>
+</html>
